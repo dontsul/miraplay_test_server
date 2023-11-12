@@ -18,8 +18,11 @@ app.use(cors());
 app.use(express.json());
 
 // Router
-// http://localhost:3002/
 app.use("/api/auth", authRoute);
+
+app.get("/", (req, res) => {
+  return res.send("<h1>Games App</>");
+});
 
 //start server
 async function startServer() {
